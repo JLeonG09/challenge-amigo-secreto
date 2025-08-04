@@ -3,3 +3,5 @@
 - Primero agregamos los archivos y seguido, empezamos a programar.
 
 - Estado del challenge: En proceso.
+
+ - Archivos agregados, seguimos con el codigo.
