@@ -2,15 +2,12 @@
 let máximoAmigos = 10;
 let listaAmigos =[];
 
-alert('Pagina actualizada');
-
 function agregarAmigo(){
     let amigoAgregado = String(document.getElementById('amigo').value);
     if(amigoAgregado ==''){
-        alert('El espacio no puede estar vacío.')
+        asignarTextoElemento('h2', 'El espacio no puede estar vacío')
     }else{
         if(listaAmigos.length>=máximoAmigos){
-            alert('Numero máximo de amigos alcanzado.')
             asignarTextoElemento('h2','Numero máximo de amigos alcanzado')
             return;
         }else{
@@ -18,8 +15,9 @@ function agregarAmigo(){
             listaAmigos.push(amigoAgregado);
             actualizarLista();
             
-            limpiarCaja();
-            console.log(listaAmigos);
+            setTimeout(()=>{
+                limpiarCaja();
+            },2000);
             
         }
     }
@@ -39,25 +37,22 @@ function actualizarLista(){
 }
 
 function sortearAmigo(){
-    let amigoSorteado = Math.floor(Math.random()*listaAmigos.length);       
-    if (listaAmigos.length == 0){
-        asignarTextoElemento('h2','Ya se sortearon todos los amigos.')
-    }else{
-        if (listaAmigos.includes(amigoSorteado)){
-            return sortearAmigo();
-        
-        }else{
-            mostrarResultado();
-            return amigoSorteado;
-            
-        }
+    
+    if (listaAmigos.length === 0){
+        asignarTextoElemento('h2','No hay amigos en la lista'); //lista vacía.
+        return;
     }
+    let amigoSorteado = Math.floor(Math.random()*listaAmigos.length);   //aquí se genera el indice de la lista de amigos. 
+    console.log (amigoSorteado);
+    let nombre = listaAmigos[amigoSorteado];
+
+    asignarTextoElemento('h2', `Tu amigo secreto es ${nombre}`);
+    listaAmigos.splice(amigoSorteado,1);
+    amigoYaSorteado.push(amigoSorteado);
+    
+    actualizarLista();
 }
 
-function mostrarResultado(amigoSorteado) {
-    let resultado = amigoSorteado;
-    alert(resultado);
-}
 
 
 
