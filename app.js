@@ -67,14 +67,3 @@ function limpiarCaja(){
     document.querySelector('#amigo').value = '';
     asignarTextoElemento('h2','Digite el nombre del Amigo')
 }
-
-function condicionesDeInicio(){
-    nuevoAmigo = agregarAmigo();
-    amigoSorteado = sortearAmigo();
-}
-
-function reiniciarAmigos(){
-    limpiarCaja();
-    condicionesDeInicio();
-    document.querySelector('#reiniciar').setAttribute('disabled','true')
-}
