@@ -2,6 +2,6 @@
 
 - Primero agregamos los archivos y seguido, empezamos a programar.
 
-- Estado del challenge: En proceso.
+- Estado del challenge: Terminado.
 
 - Archivos agregados, seguimos con el codigo.
